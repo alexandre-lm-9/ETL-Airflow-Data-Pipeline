@@ -23,6 +23,6 @@ Below are the steps taken in this project. All these steps were taken using Apac
 
 • Ingest the filtered and handled data in a Datawarehouse (DW) and make it available to the clients to query and analyze the data, in these case Amazon Relational Database Service (Amazon RDS) was used. 
 
-
+Below you can find the Architect Solution of the project:
 
 ![Airflow_Pipeline_Diagram](https://github.com/alexandre-lm-9/ETL-Airflow-Data-Pipeline/assets/123885726/fb76ee7f-8105-4c4e-9a41-f8d843bfa033)
