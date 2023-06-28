@@ -1,0 +1,4 @@
+env.json
+entrypoint.sh
+logs
+dags/__pycache__
