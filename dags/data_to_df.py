@@ -3,8 +3,6 @@ import boto3
 import json
 from airflow.models import Variable
 
-
-
 def mongo_to_df():
 
     bucket_name    = Variable.get('BUCKET_NAME')

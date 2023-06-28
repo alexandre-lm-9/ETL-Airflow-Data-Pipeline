@@ -1,9 +1,3 @@
-# from pymongo import MongoClient
-# import json
-# import boto3
-# from bson import json_util
-
-
 def extract_mongodb():
     from pymongo import MongoClient
     import json
@@ -12,20 +6,20 @@ def extract_mongodb():
     from airflow.models import Variable
 
     
-    # Informações de conexão
+    # Connection Informations
     host       = Variable.get('HOST')
     database   = Variable.get('DATABASE')
     collection = Variable.get('COLLECTION')
     username   = Variable.get('USERNAME')
     password   = Variable.get('PASSWORD')
 
-    # Criar a URL de conexão
+    # Creating URL for connection
     url = f"mongodb+srv://{username}:{password}@{host}/{database}?retryWrites=true&w=majority"
 
-    # Conectar ao MongoDB
+    # Connecting to MongoDB
     client = MongoClient(url)
 
-    # Acessar o banco de dados e a coleção
+    # Access database and collection
     db   = client[database]
     coll = db[collection]
 
@@ -49,5 +43,5 @@ def extract_mongodb():
     
     s3_client.put_object(Body=json_data, Bucket=bucket_name, Key=f'{mongodb_bucket_folder}/mongodb_data.json')
 
-    # Fechar a conexão com o MongoDB
+    # Closing MongoDB connection
     client.close()
